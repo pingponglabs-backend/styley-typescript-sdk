@@ -72,7 +72,7 @@ npm install -g typescript
 
 ```bash
 npm install --save-dev typescript
-npm install --save @styley/typescript-sdk
+npm install --save @styley-ts/ts-sdk
 ```
 
 3. **Initialize TypeScript configuration:**
@@ -108,7 +108,7 @@ export X_STYLEY_KEY=***************************
 This method creates a new deployment using the specified model ID, name, and arguments.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
 
@@ -135,7 +135,7 @@ const deployment = await styley.deployments.create({
 Get the status of a deployment job using its job ID.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley(); 
 //Change the "job_id" placeholder with actual jobID from the deployment response
@@ -149,7 +149,7 @@ console.log("jobStatus: ", jobStatus);
 Retrieve a list of all deployments.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();  
 const deployments = await styley.deployments.list();
@@ -164,7 +164,7 @@ console.log("deployments: ", deployments);
 Retrieve a list of all models available for deployments.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
 const models = await styley.models.list();
@@ -177,7 +177,7 @@ console.log("models: ", models);
 Fetch a specific model’s details using its model ID.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
 const model = await styley.models.getById("6db33e45-29cf-4880-8ee0-3d9074c32e5e");
@@ -190,7 +190,7 @@ console.log("model: ", model);
 Fetch model details using its name.
 
 ```javascript
-import { Styley } from '@styley/typescript-sdk';
+import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
 const model = await styley.models.getByName("Property Details and Maps");

@@ -21,6 +21,9 @@ export interface Deployment {
   job_id: string
   logs: string;
   model_id: string;
+  output_format: string;
+  output_width: number;
+  output_height: number;
 }
 
 export interface DeploymentInput {
@@ -28,4 +31,7 @@ export interface DeploymentInput {
   args: InputArgs;
   model: string;
   sync?: boolean;
+  output_format?: string;
+  output_width?: number;
+  output_height?: number;
 }

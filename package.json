@@ -1,6 +1,6 @@
 {
-  "name": "@styley/typescript-sdk",
-  "version": "0.0.3",
+  "name": "@styley-ts/ts-sdk",
+  "version": "0.0.2",
   "description": "Styley TypeScript SDK",
   "keywords": [
     "typescript",
@@ -24,12 +24,12 @@
     "cz": "cz",
     "semantic-release": "semantic-release"
   },
-  "homepage": "https://git.mediamagic.ai/styley-sdks/styley-typescript-sdk",
+  "homepage": "https://github.com/pingponglabs-backend/styley-typescript-sdk",
   "repository": {
-    "type": "git.mediamagic.ai",
-    "url": "https://git.mediamagic.ai/styley-sdks/styley-typescript-sdk"
+    "type": "git",
+    "url": "git+https://github.com/pingponglabs-backend/styley-typescript-sdk.git"
   },
-  "author": "akumar-styley <akumar@mediamagic.ai>",
+  "author": "arunkumar-styley <arun@genit.vip>",
   "exports": "./build/index.js",
   "types": "./build/index.d.ts",
   "license": "Apache-2.0",
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "cross-fetch": "^4.0.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.5.0"
   },
   "main": "vite.config.js",
   "directories": {
@@ -83,5 +83,8 @@
   },
   "peerDependencies": {
     "typescript": ">=4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pingponglabs-backend/styley-typescript-sdk/issues"
   }
 }

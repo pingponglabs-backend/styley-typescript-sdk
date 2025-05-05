@@ -1,6 +1,6 @@
 {
   "name": "@styley-ts/ts-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Styley TypeScript SDK",
   "keywords": [
     "typescript",

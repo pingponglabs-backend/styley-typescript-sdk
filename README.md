@@ -108,27 +108,66 @@ export X_STYLEY_KEY=***************************
 This method creates a new deployment using the specified model ID, name, and arguments.
 
 ```javascript
-import { Styley } from '@styley-ts/ts-sdk';
+import { Styley } from "@styley-ts/ts-sdk";
 
 const styley = new Styley();
 
 async function main() {
-const deployment = await styley.deployments.create({
-    model: '6db33e45-29cf-4880-8ee0-3d9074c32e5e',
-    name: 'Property Details and Maps',
+  const deployment = await styley.deployments.create({
+    model: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
+    name: "Virtual Staging Fast",
     args: {
-      "Basement": "false",
-      "City": "Arlington",
-      "Garage": "false",
-      "Pool": "true",
-      "State": "NY",
+      image:
+        "https://cdn.mediamagic.dev/media/c2310708-5b9d-11ef-b10b-30d042e69440.jpg",
+      remove_existing_furniture: "off",
+      room_type: "living",
+      style: "modern",
+      wait_for_completion: "false",
     },
+  });
+  console.log("deployment: ", deployment);
+}
+
+main().catch(console.error);
+```
+**With Additional Parameters:**
+
+- **output_format** (str, optional): Output format for the result.
+  - Images: `png`, `jpg`, `jpeg`, `gif`, `bmp`, `tiff`, `webp`, `ico`
+  - Videos: `mp4`, `webm`, `mkv`, `mov`, `avi`
+
+- **output_width** (int, optional): Output image width in pixels (positive integer)
+- **output_height** (int, optional): Output image height in pixels (positive integer)
+
+Note: For image resizing, both width and height must be specified together. If only one dimension is provided, the original image size will be maintained.
+
+```javascript
+import { Styley } from "@styley-ts/ts-sdk";
+
+const styley = new Styley();
+
+async function main() {
+  const deployment = await styley.deployments.create({
+    model: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
+    name: "Virtual Staging Fast",
+    args: {
+      image:
+        "https://cdn.mediamagic.dev/media/c2310708-5b9d-11ef-b10b-30d042e69440.jpg",
+      remove_existing_furniture: "off",
+      room_type: "living",
+      style: "modern",
+      wait_for_completion: "false",
+    },
+    output_format: "png",
+    output_width: 1024,
+    output_height: 1024,
     sync: false,
   });
-  console.log("deployment: ", deployment); 
+  console.log("deployment: ", deployment);
 }
-```
 
+main().catch(console.error);
+```
 ---
 
 ### 📜 **Get Deployment Job**
@@ -138,9 +177,14 @@ Get the status of a deployment job using its job ID.
 import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley(); 
-//Change the "job_id" placeholder with actual jobID from the deployment response
-const jobStatus = await styley.deployments.getJob("job_id");
-console.log("jobStatus: ", jobStatus);
+
+async function main() {
+  //Change the "job_id" placeholder with actual jobID from the deployment response
+  const jobStatus = await styley.deployments.getJob("<job_id>");
+  console.log("jobStatus: ", jobStatus);
+}
+
+main().catch(console.error);
 ```
 
 ---
@@ -152,8 +196,13 @@ Retrieve a list of all deployments.
 import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();  
-const deployments = await styley.deployments.list();
-console.log("deployments: ", deployments);
+
+async function main() {
+  const deployments = await styley.deployments.list();
+  console.log("deployments: ", deployments);
+}
+
+main().catch(console.error);
 ```
 
 ---
@@ -167,8 +216,13 @@ Retrieve a list of all models available for deployments.
 import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
-const models = await styley.models.list();
-console.log("models: ", models);
+
+async function main() {
+  const models = await styley.models.list();
+  console.log("models: ", models);
+}
+
+main().catch(console.error);
 ```
 
 ---
@@ -180,8 +234,13 @@ Fetch a specific model’s details using its model ID.
 import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
-const model = await styley.models.getById("6db33e45-29cf-4880-8ee0-3d9074c32e5e");
-console.log("model: ", model);
+
+async function main() {
+  const model = await styley.models.getById("<model_id>");
+  console.log("model: ", model);
+}
+
+main().catch(console.error);
 ```
 
 ---
@@ -193,8 +252,13 @@ Fetch model details using its name.
 import { Styley } from '@styley-ts/ts-sdk';
 
 const styley = new Styley();
-const model = await styley.models.getByName("Property Details and Maps");
-console.log("model: ", model);
+
+async function main() {
+  const model = await styley.models.getByName("<model-name>");
+  console.log("model: ", model);
+}
+
+main().catch(console.error);
 ```
 
 ---

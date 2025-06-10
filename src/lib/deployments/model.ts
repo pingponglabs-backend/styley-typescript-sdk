@@ -29,8 +29,8 @@ export interface Deployment {
 export interface DeploymentInput {
   name: string;
   args: InputArgs;
-  model: string;
-  sync?: boolean;
+  model_id: string;
+  synchronous?: boolean;
   output_format?: string;
   output_width?: number;
   output_height?: number;

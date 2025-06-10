@@ -18,7 +18,7 @@ describe('Deployments', () => {
         const client = new Deployments(X_STYLEY_KEY, models, MM_BASE_URL);
         const deployment = await client.create({
             name: 'Model Recommender',
-            model: '1bee9b0e-94f4-4552-a4d1-28982f10213f',
+            model_id: '1bee9b0e-94f4-4552-a4d1-28982f10213f',
             args: {
                 'image_path': 'https://cdn.mediamagic.dev/media/efd5bc26-a0ce-11ef-b716-30d042e69440.jpg'
             },

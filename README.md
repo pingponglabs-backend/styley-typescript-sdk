@@ -114,7 +114,7 @@ const styley = new Styley();
 
 async function main() {
   const deployment = await styley.deployments.create({
-    model: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
+    model_id: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
     name: "Virtual Staging Fast",
     args: {
       image:
@@ -148,7 +148,7 @@ const styley = new Styley();
 
 async function main() {
   const deployment = await styley.deployments.create({
-    model: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
+    model_id: "fc5525a1-d073-4ee2-95f7-a6b9388aab94",
     name: "Virtual Staging Fast",
     args: {
       image:
@@ -161,7 +161,7 @@ async function main() {
     output_format: "png",
     output_width: 1024,
     output_height: 1024,
-    sync: false,
+    synchronous: false,
   });
   console.log("deployment: ", deployment);
 }

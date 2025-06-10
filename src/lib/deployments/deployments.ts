@@ -20,13 +20,13 @@ class Deployments extends Client {
     async create(deployment: DeploymentInputWithIndex): Promise<Deployment | undefined> {
         let model;
         try {
-            model = await this.modelsClient.getById(deployment.model);
+            model = await this.modelsClient.getById(deployment.model_id);
         } catch (e) {
             if (e instanceof Error) {
                 throw new Error(`error fetching model: ${e.message}`);
             }
         }
-        deployment.model_id = model?.id;
+        deployment.model_id = model?.id || '';
         try {
             let actualResponse = await this.post<DeploymentInputWithIndex, Deployment>(
                 '/api/v1/deployments',
